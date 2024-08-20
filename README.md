@@ -1,6 +1,6 @@
 # LeUI 脚手架 le-ui-cli
 
-![Node.js Version](https://img.shields.io/badge/node.js-=_18.20.3-brightgreen.svg?style=flat-square) ![npm@10.7.0](https://img.shields.io/badge/npm-v10.7.0-red)
+![Node.js Version](https://img.shields.io/badge/node-v18.20.3-brightgreen.svg?style=flat-square) ![npm@10.7.0](https://img.shields.io/badge/npm-v10.7.0-red)
 
 LeUI 可用于快速创建 OA 项目，响应式设计，内置 OA 登录态
 
