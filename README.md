@@ -1,12 +1,12 @@
 # LeUI 脚手架 le-ui-cli
 
-[![Node.js Version](https://img.shields.io/badge/node.js-=_18.20.3-green.svg?style=flat-square)](https://www.npmjs.org/package/commander)
+![Node.js Version](https://img.shields.io/badge/node.js-=_18.20.3-green.svg?style=flat-square)
 ![Vue 3.4](https://img.shields.io/badge/vue-3.4.31-42b883?style=flat&logo=vue.js)
 ![Vite 5.3](https://img.shields.io/badge/vite-v5.3.3-blue)
 ![vite@5.3.3](https://img.shields.io/badge/vite-v5.3.3-brightgreen)
 
 
-LeUI 可用于快速创建 OA 项目，响应式设计，内置 OA 登录态、前端监控等通用组件
+LeUI 可用于快速创建 OA 项目，响应式设计，内置 OA 登录态
 
 ## 功能特性
 
