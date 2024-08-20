@@ -1,0 +1,27 @@
+{
+  "name": "le-ui-cli",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "LeUI 是一个用于快速创建 OA 项目的脚手架工具，响应式设计",
+  "main": "index.mjs",
+  "bin": {
+    "le-ui-cli": "index.mjs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "LeUI"
+  ],
+  "author": "tigertang",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^12.1.0",
+    "ejs": "^3.1.10",
+    "fs-extra": "^11.2.0",
+    "inquirer": "^10.1.8",
+    "prompts": "^2.4.2",
+    "simple-git": "^3.25.0"
+  }
+}
