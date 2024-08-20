@@ -22,7 +22,7 @@ const confirmProjectName = async (projectName) => {
     {
       type: 'confirm',
       name: 'confirm',
-      message: `确认项目名称 ${ projectName }?`,
+      message: `确认新项目工程 ID (project-name) ${ projectName }?`,
       default: true,
     },
   ]);

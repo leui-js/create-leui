@@ -1,6 +1,12 @@
 # LeUI 脚手架 le-ui-cli
 
-LeUI 是一个用于快速创建 OA 项目的脚手架工具，响应式设计
+[![Node.js Version](https://img.shields.io/badge/node.js-=_18.20.3-green.svg?style=flat-square)](https://www.npmjs.org/package/commander)
+![Vue 3.4](https://img.shields.io/badge/vue-3.4.31-42b883?style=flat&logo=vue.js)
+![Vite 5.3](https://img.shields.io/badge/vite-v5.3.3-blue)
+![vite@5.3.3](https://img.shields.io/badge/vite-v5.3.3-brightgreen)
+
+
+LeUI 可用于快速创建 OA 项目，响应式设计，内置 OA 登录态、前端监控等通用组件
 
 ## 功能特性
 
@@ -11,10 +17,10 @@ LeUI 是一个用于快速创建 OA 项目的脚手架工具，响应式设计
 
 ## 安装
 
-全局安装 le-ui：
+全局安装 le-ui-cli：
 
 ```sh
-npm install -g le-ui 
+npm install -g le-ui-cli 
 ```
 
 ## 创建项目
