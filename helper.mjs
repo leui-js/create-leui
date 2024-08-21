@@ -11,7 +11,7 @@ export const preClone = (projectName) => {
   const projectPath = path.join(process.cwd(), projectName);
 
   if (fs.pathExistsSync(projectPath)) {
-    console.error(chalk.red(`项目目录 ${ projectName } 已存在，请重新指定`))
+    console.error(chalk.red(`项目目录 ${ projectName } 已存在，请手动清理后重试`))
     return exit(1);
   }
   return projectPath
@@ -19,8 +19,6 @@ export const preClone = (projectName) => {
 
 
 export function gitCloneTemplate(projectPath) {
-
-
   const git = simpleGit();
   return git.clone(repoUrl, projectPath)
     .then(() => {
@@ -28,23 +26,51 @@ export function gitCloneTemplate(projectPath) {
       fs.removeSync(path.join(projectPath, '.git'));
     })
     .catch((error) => {
-      console.error('项目 clone 异常:', error);
+      onCloneError(projectPath, error.message)
     });
 }
 
 
 export const renderTemplates = (projectPath, files, keywords) => {
 
-  files.forEach(async (file) => {
+  const renderFailFile = files.find((file) => {
     const filePath = path.join(projectPath, file)
     if (fs.pathExistsSync(filePath)) {
-
-      const template = fs.readFileSync(filePath, 'utf-8');
-      const rendered = ejs.render(template, keywords);
-      fs.writeFileSync(filePath, rendered);
+      try {
+        const template = fs.readFileSync(filePath, 'utf-8');
+        const rendered = ejs.render(template, keywords);
+        fs.writeFileSync(filePath, rendered);
+      } catch (e) {
+        console.error(e)
+        return file
+      }
     }
   })
 
+  if (renderFailFile) {
+    const message = `${ renderFailFile } 模板渲染异常`
+    onRenderError(projectPath, message)
+    throw new Error(message)
+  }
+}
+
+
+export const onCreateError = (projectPath, message) => {
+  console.error(chalk.redBright(`${ message }`))
+  if (fs.pathExistsSync(projectPath)) {
+    fs.removeSync(projectPath)
+    console.log(chalk.gray(`${projectPath} 工程目录已清理`));
+  }
+  return exit(1);
+}
+
+
+const onRenderError = (projectPath, msg) => {
+  onCreateError(projectPath, msg)
+}
+
+const onCloneError = (projectPath, message) => {
+  onCreateError(projectPath, `模板 clone 异常: ${ message }`)
 }
 
 
