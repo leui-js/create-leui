@@ -1,4 +1,9 @@
-export const templateFiles = ['package.json', 'index.html', 'vite.config.ts']
+export const templateFiles = [
+  'package.json',
+  'index.html',
+  'vite.config.ts',
+  'src/plugins/vuetify/theme.ts'
+]
 
 export const repoUrl = 'http://gitlab.fenqile.com/soa/le-ui-template.git';
 
@@ -14,12 +19,13 @@ export const customPrompts = [
     name: 'mainColor',
     message: `请挑选主色调`,
     choices: [
-      { title: '蓝色', value: 'blue' },
-      { title: '绿色', value: 'green' },
+      { title: '紫色', value: ['#8C57FF', '#7E4EE6'] },
+      { title: '蓝色', value: ['#16B1FF', '#149FE6'] },
+      { title: '绿色', value: ['#0D9394', '#0C8485'] },
       {
         title: '黄色',
-        description: 'This option has a description',
-        value: 'yellow',
+        description: '暂不支持',
+        value: ['#FFB400', '#E6A200'],
         disabled: true
       },
     ],
