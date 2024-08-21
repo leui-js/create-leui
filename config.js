@@ -10,7 +10,8 @@ export const repoUrl = 'http://gitlab.fenqile.com/soa/le-ui-template.git';
 export const customPrompts = [
   {
     type: 'text',
-    name: 'title',
+    name: 'appName',
+    // name: 'title',
     message: '应用标题：',
     initial: ' OA 应用',
   },
