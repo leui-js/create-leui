@@ -5,7 +5,7 @@ import prompts from 'prompts'
 import inquirer from 'inquirer'
 import chalk from 'chalk'
 
-import { templateFiles, customPrompts } from './config.js'
+import { customPrompts, templateFiles } from './config.js'
 import { gitCloneTemplate, preClone, renderTemplates } from './helper.mjs'
 
 
@@ -41,19 +41,15 @@ program
     debugger
 
     const confirm = await confirmProjectName(projectName);
+    const projPath = preClone(projectName)
 
     if (confirm) {
       const promptsInput = await prompts(customPrompts)
-
-      const projPath = preClone(projectName)
       await gitCloneTemplate(projPath)
       renderTemplates(projPath, templateFiles, { projectName, ...promptsInput })
-
       console.log(chalk.greenBright('项目创建成功!'));
-
-    } else {
-
     }
+
   });
 
 program.parse(process.argv);
