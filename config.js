@@ -18,15 +18,6 @@ export const customPrompts = [
   },
   {
     type: 'select',
-    name: 'navType',
-    message: '导航方式',
-    choices: [
-      { title: '水平导航', value: 'Horizontal' },
-      { title: '垂直导航', value: 'Vertical' },
-    ]
-  },
-  {
-    type: 'select',
     name: 'mainColor',
     message: `请挑选主色调`,
     choices: [
@@ -40,6 +31,15 @@ export const customPrompts = [
         disabled: true
       },
     ],
+  },
+  {
+    type: 'select',
+    name: 'navType',
+    message: '导航方式',
+    choices: [
+      { title: '水平导航', value: 'Horizontal' },
+      { title: '垂直导航', value: 'Vertical' },
+    ]
   },
   {
     type: 'select',
