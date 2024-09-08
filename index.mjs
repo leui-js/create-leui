@@ -45,7 +45,7 @@ const createLeUIProj = async () => {
 
   const projPath = preClone(projectName)
 
-  const result = await prompts(customPrompts)
+  const promptsInput = await prompts(customPrompts)
 
   await gitCloneTemplate(projPath)
   renderTemplates(projPath, templateFiles, { projectName, ...promptsInput })
