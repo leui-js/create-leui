@@ -21,6 +21,12 @@ npm install -g le-ui-cli
 
 ## 创建项目
 
+无需全局安装 
+```sh
+npm create leui@latest
+```
+
+
 ```sh
 le-ui-cli create <my-project>
 ```
