@@ -1,8 +1,8 @@
 {
-  "name": "le-ui-cli",
+  "name": "create-leui",
   "version": "0.0.1",
   "type": "module",
-  "description": "LeUI 是一个用于快速创建 OA 项目的脚手架工具，响应式设计",
+  "description": "乐信OA团队前端框架 LeUI, 遵循 Google Material 规范，响应式设计，可用于快速创建集团内部 OA 应用，高度集成，开箱即用",
   "main": "index.mjs",
   "bin": {
     "le-ui-cli": "index.mjs"
@@ -22,6 +22,7 @@
     "fs-extra": "^11.2.0",
     "inquirer": "^10.1.8",
     "prompts": "^2.4.2",
-    "simple-git": "^3.25.0"
+    "simple-git": "^3.25.0",
+    "validate-npm-package-name": "^5.0.1"
   }
 }
