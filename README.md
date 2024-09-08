@@ -1,4 +1,4 @@
-# LeUI 脚手架 le-ui-cli
+# LeUI 脚手架 create-leui
 
 [![LeUI Version](https://img.shields.io/badge/LeUI-v0.0.1-blue.svg?style=flat-square)](https://ledocs.oa.fenqile.com/desktop/folder/FOLDER58c4b571d72af55265094ecf5755ecc4) ![Node.js Version](https://img.shields.io/badge/node-v18.20.3-brightgreen.svg?style=flat-square) ![npm@10.7.0](https://img.shields.io/badge/npm-v10.7.0-red)
 
@@ -13,10 +13,10 @@ LeUI 可用于快速创建 OA 项目，响应式设计，内置 OA 登录态
 
 ## 安装
 
-全局安装 le-ui-cli：
+全局安装 create-leui：
 
 ```sh
-npm install -g le-ui-cli 
+npm install -g create-leui
 ```
 
 ## 创建项目
@@ -28,7 +28,7 @@ npm create leui@latest
 
 
 ```sh
-le-ui-cli create <my-project>
+create-leui <my-project>
 ```
 
 ## 使用

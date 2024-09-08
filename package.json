@@ -5,7 +5,7 @@
   "description": "乐信OA团队前端框架 LeUI, 遵循 Google Material 规范，响应式设计，可用于快速创建集团内部 OA 应用，高度集成，开箱即用",
   "main": "index.mjs",
   "bin": {
-    "le-ui-cli": "index.mjs"
+    "create-leui": "index.mjs"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

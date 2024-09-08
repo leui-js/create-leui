@@ -3,17 +3,25 @@
 import { Command } from 'commander'
 import prompts from 'prompts'
 import inquirer from 'inquirer'
+
+import { customPrompts, firstPrompt, templateFiles } from './utils/config.js'
+import { intro, logo } from './utils/copyright.js'
+import { gitCloneTemplate, preClone, renderTemplates } from './utils/helper.mjs'
 import chalk from 'chalk'
 
-import { customPrompts, templateFiles } from './config.js'
-import { gitCloneTemplate, preClone, renderTemplates } from './helper.mjs'
 
+if (process.stdout.isTTY && process.stdout.getColorDepth() >= 8) {
+
+  console.log() // 换行
+  console.log(logo, '-', intro)
+  console.log()
+
+}
 
 const program = new Command();
 
-
 /**
- * le-ui-cli -h
+ * create-leui -h
  */
 program.version('0.0.1').description('乐信 OA 前端框架 LeUI 应用脚手架');
 
@@ -31,25 +39,20 @@ const confirmProjectName = async (projectName) => {
 }
 
 
-/**
- * le-ui-cli create <project-name>
- */
-program
-  .command('create <project-name>')
-  .description('新建一个 LeUI 项目: ')
-  .action(async (projectName) => {
-    debugger
+const createLeUIProj = async () => {
 
-    const confirm = await confirmProjectName(projectName);
-    const projPath = preClone(projectName)
+  const { projectName } = await prompts(firstPrompt)
 
-    if (confirm) {
-      const promptsInput = await prompts(customPrompts)
-      await gitCloneTemplate(projPath)
-      renderTemplates(projPath, templateFiles, { projectName, ...promptsInput })
-      console.log(chalk.greenBright('项目创建成功!'));
-    }
+  const projPath = preClone(projectName)
 
-  });
+  const result = await prompts(customPrompts)
 
-program.parse(process.argv);
+  await gitCloneTemplate(projPath)
+  renderTemplates(projPath, templateFiles, { projectName, ...promptsInput })
+  console.log(chalk.greenBright('项目创建成功!'));
+
+  // console.log(result)
+}
+
+createLeUIProj().then()
+
