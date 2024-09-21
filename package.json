@@ -1,6 +1,6 @@
 {
   "name": "create-leui",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "description": "乐信OA团队前端框架 LeUI, 遵循 Google Material 规范，响应式设计，可用于快速创建集团内部 OA 应用，高度集成，开箱即用",
   "main": "index.mjs",
