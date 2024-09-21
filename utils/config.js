@@ -3,14 +3,11 @@ import validatePackName from 'validate-npm-package-name'
 // import chalk from 'chalk'
 import mainColorChoices from './mainColorChoices.js'
 
-
-
 const args = process.argv.slice(2)
 
 const options = {
   ts: { type: 'boolean' },
 }
-
 
 const { values: argv, positionals } = parseArgs({
   args,
@@ -18,12 +15,10 @@ const { values: argv, positionals } = parseArgs({
   strict: false
 })
 
-debugger
 let targetDir = positionals[0]
 
 const defaultProjectName = !targetDir ? 'leui-app' : targetDir
 
-debugger
 
 export const templateFiles = [
   'package.json',
@@ -35,30 +30,27 @@ export const templateFiles = [
 
 export const repoUrl = 'http://gitlab.fenqile.com/soa/le-ui-template.git';
 
-
 function isValidPackageName(projectName) {
   return /^(?:@[a-z0-9-*~][a-z0-9-*._~]*\/)?[a-z0-9-~][a-z0-9-._~]*$/.test(projectName)
 }
 
 
-export  const firstPrompt = {
+export const firstPrompt = {
   name: 'projectName',
   type: 'text',
   message: '工程名称',
   initial: defaultProjectName,
   onState(state) {
-    debugger
     return (targetDir = String(state.value).trim().toLowerCase() || defaultProjectName)
   },
   validate(dir) {
-    debugger
     const { validForNewPackages, validForOldPackages } = validatePackName(dir)
 
-    if (validForNewPackages && validForOldPackages)  {
-      return  isValidPackageName(dir)
+    if (validForNewPackages && validForOldPackages) {
+      return isValidPackageName(dir)
     }
 
-    return  '工程名不合法，请重试'
+    return '工程名不合法，请重试'
   },
 }
 

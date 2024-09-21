@@ -13,18 +13,12 @@ const mainColorChoices = [
 ]
 
 
-// const mainColorHint = mainColorChoices.reduce((str, { title, value: colors}) => {
-//   const output = colors.map( color => chalk.hex(color).bold('■')).join('-')
-//   return `${str} ${title}: ${output} \n`
-// }, '')
-
-
-mainColorChoices.forEach( (choice) => {
-  const { value: colors , title} = choice
-  const colorSquare = colors.map( color => chalk.hex(color).bold('■')).join('')
-  choice.title = `${title}: ${colorSquare} `
+mainColorChoices.forEach((choice) => {
+  const { value: colors, title } = choice
+  const colorSquare = colors.map(color => chalk.hex(color).bold('■')).join(' ')
+  choice.title = `${ title }: ${ colorSquare } `
   // console.log(choice.title)
-} )
+})
 
 export default mainColorChoices
 

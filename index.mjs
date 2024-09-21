@@ -9,13 +9,10 @@ import { intro, logo } from './utils/copyright.js'
 import { gitCloneTemplate, preClone, renderTemplates } from './utils/helper.mjs'
 import chalk from 'chalk'
 
-
 if (process.stdout.isTTY && process.stdout.getColorDepth() >= 8) {
-
   console.log() // 换行
   console.log(logo, '-', intro)
   console.log()
-
 }
 
 const program = new Command();
@@ -34,7 +31,6 @@ const confirmProjectName = async (projectName) => {
       default: true,
     },
   ]);
-
   return confirm;
 }
 

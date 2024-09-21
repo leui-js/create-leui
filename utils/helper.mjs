@@ -59,7 +59,7 @@ export const onCreateError = (projectPath, message) => {
   console.error(chalk.redBright(`${ message }`))
   if (fs.pathExistsSync(projectPath)) {
     fs.removeSync(projectPath)
-    console.log(chalk.gray(`${projectPath} 工程目录已清理`));
+    console.log(chalk.gray(`${ projectPath } 工程目录已清理`));
   }
   return exit(1);
 }
