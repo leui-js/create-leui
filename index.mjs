@@ -20,7 +20,7 @@ const program = new Command();
 /**
  * create-leui -h
  */
-program.version('0.0.1').description('乐信 OA 前端框架 LeUI 应用脚手架');
+program.version('0.0.2').description('乐信 OA 前端框架 LeUI 应用脚手架');
 
 const confirmProjectName = async (projectName) => {
   const { confirm } = await inquirer.prompt([
