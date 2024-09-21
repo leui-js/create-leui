@@ -1,5 +1,8 @@
 import { parseArgs } from 'node:util'
 import validatePackName from 'validate-npm-package-name'
+// import chalk from 'chalk'
+import mainColorChoices from './mainColorChoices.js'
+
 
 
 const args = process.argv.slice(2)
@@ -68,21 +71,25 @@ export const customPrompts = [
     message: '应用标题：',
     initial: ' OA 应用',
   },
+
+  {
+    type: 'select',
+    name: 'biz',
+    message: '请选择应用所属的业务线',
+    choices: [
+      { title: 'OA', value: 'oa' },
+      { title: '人事', value: 'hr' },
+      { title: '财务', value: 'fi', disabled: true },
+      { title: '法务', value: 'law', disabled: true },
+      { title: '其他', value: 'app', disabled: true },
+    ]
+  },
   {
     type: 'select',
     name: 'mainColor',
     message: `请挑选主色调`,
-    choices: [
-      { title: '紫色', value: ['#8C57FF', '#7E4EE6'] },
-      { title: '蓝色', value: ['#16B1FF', '#149FE6'] },
-      { title: '绿色', value: ['#0D9394', '#0C8485'] },
-      {
-        title: '黄色',
-        description: '暂不支持',
-        value: ['#FFB400', '#E6A200'],
-        disabled: true
-      },
-    ],
+    // hint: mainColorHint,
+    choices: mainColorChoices,
   },
   {
     type: 'select',

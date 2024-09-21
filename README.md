@@ -21,11 +21,12 @@ npm install -g create-leui
 
 ## 创建项目
 
-无需全局安装 
+> 无需全局安装 
 ```sh
 npm create leui@latest
 ```
 
+> 全局安装后
 
 ```sh
 create-leui <my-project>
