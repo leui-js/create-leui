@@ -97,7 +97,7 @@ export const customPrompts = [
     name: 'domain',
     message: '请选择应用的访问域名:',
     choices: [
-      { title: 'm.oa.fenqile.com', value: 'm.oa.fenqile.com' },
+      { title: 'oa.fenqile.com', value: 'oa.fenqile.com' },
       { title: 'hr.oa.fenqile.com', value: 'hr.oa.fenqile.com' }
     ]
   }
