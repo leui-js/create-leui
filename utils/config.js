@@ -28,7 +28,7 @@ export const templateFiles = [
   'src/plugins/vuetify/theme.ts',
 ]
 
-export const repoUrl = 'http://gitlab.fenqile.com/soa/le-ui-template.git';
+export const repoUrl = 'https://github.com/leui-js/leui-template.git';
 
 function isValidPackageName(projectName) {
   return /^(?:@[a-z0-9-*~][a-z0-9-*._~]*\/)?[a-z0-9-~][a-z0-9-._~]*$/.test(projectName)
