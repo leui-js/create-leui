@@ -18,6 +18,13 @@ LeUI 可用于快速创建 OA 项目，响应式设计，内置 OA 登录态
 ```sh
 npm install -g create-leui
 ```
+安装好之后，可以全局使用 `create-leui` 命令创建 LeUI 项目。
+示例： 
+```sh
+cd your_project_path
+create-leui 
+```
+
 
 ##  创建项目
 
